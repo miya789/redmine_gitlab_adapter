@@ -54,6 +54,7 @@ module Redmine
           ## Set Gitlab endpoint and token
           Gitlab.endpoint = root_url + '/api/v4'
           Gitlab.private_token = password
+          Gitlab.httparty = {verify: false}
 
           ## Set proxy
           proxy = URI.parse(url).find_proxy
